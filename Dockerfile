@@ -2,10 +2,9 @@ FROM alpine:edge
 
 ENV BNBD_HOME=/bnbd
 
-# ENV FULLNODE_LATEST_VERSION="0.8.0"
-# ENV GH_REPO_URL="https://github.com/binance-chain/node-binary/raw/master"
-# ENV FULLNODE_VERSION_PATH="fullnode/prod/${FULLNODE_LATEST_VERSION}"
-# ENV FULLNODE_CONFIG_URL="$GH_REPO_URL/${FULLNODE_VERSION_PATH}/config"
+
+# Install ca-certificates
+RUN apk add --no-cache --update ca-certificates supervisor wget lz4
 
 # UPDATE ME when new version is out !!!!
 ARG CLI_LATEST_VERSION="0.8.0-hotfix"

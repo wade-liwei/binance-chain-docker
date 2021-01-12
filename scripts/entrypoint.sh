@@ -6,15 +6,7 @@ echo "setting up initial configurations"
 
 if [ ! -f "$BNBD_HOME/config/config.toml" ];
 then
-
-  shell="ls /tmp/config" #查看根目录下所有文件
-  $shell  #执行上面的字符串命令
-
   cp -r /tmp/config $BNBD_HOME/config
-
-  lsshell="ls $BNBD_HOME/config" #查看根目录下所有文件
-  $lsshell  #执行上面的字符串命令
-
 fi
 
 
