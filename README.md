@@ -64,3 +64,17 @@ docker run --rm -d --name binance-node varnav/binance-node
 docker exec -it binance-node /bin/bash
 bnbcli version
 ```
+
+
+
+### cmd
+
+```
+docker run -d --name binance-node -p 27146:27146 -p 27147:27147 -p 26660:26660 --restart unless-stopped --security-opt no-new-privileges --ulimit nofile=16000:16000  -v  /data/liwei/binance-node:/home/bnbchaind/.bnbchaind   liwei/binance-node-1
+
+
+
+docker run -d --name binance-node -p 27146:27146 -p 27147:27147 -p 26660:26660 --restart unless-stopped --security-opt no-new-privileges --ulimit nofile=16000:16000    liwei/binance-node-1
+
+
+```
