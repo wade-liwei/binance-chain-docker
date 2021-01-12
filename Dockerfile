@@ -32,13 +32,6 @@ RUN set -ex \
 && sed -i 's/logToConsole = false/logToConsole = true/g' app.toml
 
 
-COPY --from=buildenv /go/bin/gaiad /tmp/bin
-COPY --from=buildenv /go/bin/gaiacli /tmp/bin
-RUN install -m 0755 -o root -g root -t /usr/local/bin gaiad
-RUN install -m 0755 -o root -g root -t /usr/local/bin gaiacli
-
-
-
 # Add supervisor configuration files
 RUN mkdir -p /etc/supervisor/conf.d/
 COPY /supervisor/supervisord.conf /etc/supervisor/supervisord.conf
