@@ -44,7 +44,7 @@ RUN set -ex \
 # RPC service listen on port 27147 and P2P service listens on port 27146 by default.
 # Prometheus is enabled on port 26660 by default, and the endpoint is /metrics.
 
-VOLUME /home/bnbchaind/.bnbchaind/
+# VOLUME /home/bnbchaind/.bnbchaind/
 EXPOSE 27146 27147 26660
 
 # CMD /bin/bash
