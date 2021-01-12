@@ -7,6 +7,8 @@ echo "setting up initial configurations"
 if [ ! -f "$BNBD_HOME/config/config.toml" ];
 then
   cp -r /tmp/config $BNBD_HOME/config
+
+  ls /usr/local/bin/
 fi
 
 
