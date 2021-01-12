@@ -17,7 +17,7 @@ RUN set -ex \
 && wget -q https://github.com/binance-chain/node-binary/raw/master/cli/prod/$CLI_LATEST_VERSION/linux/bnbcli \
 && chmod 755 "./bnbcli" \
 # && FULLNODE_BINARY_URL="$GH_REPO_URL/$FULLNODE_VERSION_PATH/linux/bnbchaind" \
-&& https://github.com/binance-chain/node-binary/raw/master/fullnode/prod/$FULLNODE_VERSION_PATH/linux/bnbchaind \
+&& wget -q https://github.com/binance-chain/node-binary/raw/master/fullnode/prod/$FULLNODE_VERSION_PATH/linux/bnbchaind \
 && chmod 755 "./bnbchaind"
 
 
