@@ -4,7 +4,7 @@ ENV BNBD_HOME=/bnbd
 
 
 # Install ca-certificates
-RUN apk add --no-cache --update ca-certificates supervisor wget lz4
+RUN apk add --no-cache --update ca-certificates supervisor wget
 
 # UPDATE ME when new version is out !!!!
 ARG CLI_LATEST_VERSION="0.8.0-hotfix"
@@ -75,6 +75,9 @@ RUN set -ex \
 && cp  /usr/local/bin/bnbchaind  /tmp/bin/bnbchaind4444 \
 && chmod 755 "./bnbchaind4444" \
 && ls -l /tmp/bin
+
+
+
 #ENTRYPOINT ["/usr/local/bin/bnbchaind", "start"]
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
 
