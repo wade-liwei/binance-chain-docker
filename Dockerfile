@@ -4,7 +4,10 @@ ENV BNBD_HOME=/bnbd
 
 
 # Install ca-certificates
-RUN apk add --no-cache --update ca-certificates supervisor wget
+RUN apt-get update
+RUN apt-get install wget
+RUN apt-get install supervisor
+
 
 # UPDATE ME when new version is out !!!!
 ARG CLI_LATEST_VERSION="0.8.0-hotfix"
