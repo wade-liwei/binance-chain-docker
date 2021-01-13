@@ -1,5 +1,9 @@
 #!/bin/sh
 
+echo "/usr/local/bin/  start"
+ls /usr/local/bin/
+echo "/usr/local/bin/  end"
+
 # exit script on any error
 set -e
 echo "setting up initial configurations"
