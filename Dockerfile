@@ -31,7 +31,7 @@ WORKDIR /tmp/bin
 RUN set -ex \
 && cd  /tmp/bin \
 && FULLNODE_BINARY_URL="$GH_REPO_URL/$FULLNODE_VERSION_PATH/linux/bnbchaind" \
-&& wget  -q  "$FULLNODE_BINARY_URL"  
+&& wget  -q  "$FULLNODE_BINARY_URL"
 
 RUN install -m 0755 -o root -g root -t /usr/local/bin bnbchaind
 
@@ -66,13 +66,13 @@ COPY ./scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod u+x /usr/local/bin/entrypoint.sh
 
 RUN set -ex \
-&& ls /usr/local/bin/ \
+&& ls -l /usr/local/bin/ \
 && mkdir -p /tmp/bin  \
 && cd /tmp/bin \
 && cp  /usr/local/bin/bnbchaind  /tmp/bin/bnbchaind333 \
 && cp  /usr/local/bin/bnbchaind  /tmp/bin/bnbchaind4444 \
 && chmod 755 "./bnbchaind4444" \
-&& ls /tmp/bin
+&& ls -l /tmp/bin
 #ENTRYPOINT ["/usr/local/bin/bnbchaind", "start"]
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
 

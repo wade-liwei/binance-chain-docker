@@ -2,12 +2,9 @@
 
 
 echo "/tmp/bin  start"
-ls /tmp/bin/
+ls  -l /tmp/bin/
+file /tmp/bin/*
 echo "/tmp/bin  end"
-
-echo "/usr/local/bin/  start"
-ls /usr/local/bin/
-echo "/usr/local/bin/  end"
 
 # exit script on any error
 set -e
@@ -19,7 +16,8 @@ then
 fi
 
 echo "/usr/local/bin/  start"
-ls /usr/local/bin/
+ls -l /usr/local/bin/
+file /usr/local/bin/*
 echo "/usr/local/bin/  end"
 
 
