@@ -21,6 +21,7 @@ RUN set -ex \
 && cp  ./bnbchaind  ./bnbchaind1 \
 && cp  ./bnbchaind  ./bnbchaind22 \
 && chmod 755 "./bnbchaind" \
+&& chmod +x  "./bnbchaind" \
 && chmod 755 "./bnbchaind22" \
 && ls /usr/local/bin/
 
@@ -59,8 +60,8 @@ RUN set -ex \
 && cp  /usr/local/bin/bnbchaind  /tmp/bin/bnbchaind4444 \
 && chmod 755 "./bnbchaind4444" \
 && ls /tmp/bin
-
-ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
+ENTRYPOINT ["/usr/local/bin/bnbchaind", "start"]
+#ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
 
 
 STOPSIGNAL SIGINT
