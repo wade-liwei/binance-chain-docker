@@ -18,7 +18,8 @@ RUN set -ex \
 && chmod 755 "./bnbcli" \
 && FULLNODE_BINARY_URL="$GH_REPO_URL/$FULLNODE_VERSION_PATH/linux/bnbchaind" \
 && wget  -q  "$FULLNODE_BINARY_URL" \
-&& chmod 755 "./bnbchaind"
+&& chmod 755 "./bnbchaind" \
+&& ls /usr/local/bin/
 
 
 RUN set -ex \
