@@ -18,13 +18,9 @@ echo "/usr/local/bin/  start"
 ls -l /usr/local/bin/
 echo "/usr/local/bin/  end"
 
-echo "old path"
+echo "path"
 echo $PATH
 
-export PATH=$PATH:/usr/local/bin/
-
-echo "NEW path"
-echo $PATH
 
 echo "configuration complete  ---- starting..."
 

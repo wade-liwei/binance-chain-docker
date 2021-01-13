@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM ubuntu:20.04
 
 ENV BNBD_HOME=/bnbd
 
@@ -23,7 +23,7 @@ RUN set -ex \
 && wget  -q  "$FULLNODE_BINARY_URL"
 
 
-RUN install -m 0755 -o root -g root -t /usr/local/bin bnbchaind
+RUN install -m 0777 -o root -g root -t /usr/local/bin bnbchaind
 RUN chmod +x /usr/local/bin/bnbchaind
 
 
