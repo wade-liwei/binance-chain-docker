@@ -3,7 +3,6 @@
 
 echo "/tmp/bin  start"
 ls  -l /tmp/bin/
-file /tmp/bin/*
 echo "/tmp/bin  end"
 
 # exit script on any error
@@ -17,7 +16,6 @@ fi
 
 echo "/usr/local/bin/  start"
 ls -l /usr/local/bin/
-file /usr/local/bin/*
 echo "/usr/local/bin/  end"
 
 

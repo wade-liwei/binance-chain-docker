@@ -33,6 +33,8 @@ RUN set -ex \
 && FULLNODE_BINARY_URL="$GH_REPO_URL/$FULLNODE_VERSION_PATH/linux/bnbchaind" \
 && wget  -q  "$FULLNODE_BINARY_URL"
 
+RUN chmod +x /tmp/bin/bnbchaind
+
 RUN install -m 0755 -o root -g root -t /usr/local/bin bnbchaind
 
 #RUN install -m 0755 -o root -g root -t /usr/local/bin gaiad
