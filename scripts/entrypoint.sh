@@ -25,5 +25,5 @@ echo "/usr/local/bin/  end"
 
 echo "configuration complete  ---- starting..."
 
-exec  /usr/local/bin/bnbchaind start  --home $BNBD_HOME
-#exec supervisord --nodaemon --configuration /etc/supervisor/supervisord.conf
+#exec  /usr/local/bin/bnbchaind start  --home $BNBD_HOME
+exec supervisord --nodaemon --configuration /etc/supervisor/supervisord.conf
