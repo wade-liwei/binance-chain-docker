@@ -16,19 +16,19 @@ RUN set -ex \
 && cd /usr/local/bin/ \
 && wget -q https://github.com/binance-chain/node-binary/raw/master/cli/prod/$CLI_LATEST_VERSION/linux/bnbcli \
 && chmod 755 "./bnbcli" \
-# && FULLNODE_BINARY_URL="$GH_REPO_URL/$FULLNODE_VERSION_PATH/linux/bnbchaind" \
-&& wget -q https://github.com/binance-chain/node-binary/raw/master/fullnode/prod/$FULLNODE_VERSION_PATH/linux/bnbchaind \
+&& FULLNODE_BINARY_URL="$GH_REPO_URL/$FULLNODE_VERSION_PATH/linux/bnbchaind" \
+&& wget  -q  "$FULLNODE_BINARY_URL" \
 && chmod 755 "./bnbchaind"
 
 
 RUN set -ex \
 && mkdir -p /tmp/config  \
 && cd /tmp/config \
-&& FULLNODE_CONFIG_URL="$GH_REPO_URL/$FULLNODE_VERSION_PATH/config" \
-&& wget -q "$FULLNODE_CONFIG_URL/app.toml" \
-&& wget -q "$FULLNODE_CONFIG_URL/config.toml" \
-&& wget -q "$FULLNODE_CONFIG_URL/genesis.json" \
-&& sed -i 's/logToConsole = false/logToConsole = true/g' app.toml
+&& FULLNODE_CONFIG_URL="$GH_REPO_URL/$FULLNODE_VERSION_PATH/config"  \
+&& wget  -q   "$FULLNODE_CONFIG_URL/app.toml"  \
+&& wget  -q   "$FULLNODE_CONFIG_URL/config.toml"  \
+&& wget  -q   "$FULLNODE_CONFIG_URL/genesis.json"  \
+&& sed   -i   's/logToConsole = false/logToConsole = true/g'   app.toml
 
 
 # Add supervisor configuration files
