@@ -5,8 +5,8 @@ ENV BNBD_HOME=/bnbd
 
 # Install ca-certificates
 RUN apt-get update
-RUN apt-get install wget
-RUN apt-get install supervisor
+RUN apt-get install wget  -y
+RUN apt-get install supervisor -y
 
 
 # UPDATE ME when new version is out !!!!
