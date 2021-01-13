@@ -12,9 +12,8 @@ ARG FULLNODE_LATEST_VERSION="0.8.0"
 ARG GH_REPO_URL="https://github.com/binance-chain/node-binary/raw/master"
 ARG FULLNODE_VERSION_PATH="fullnode/prod/${FULLNODE_LATEST_VERSION}"
 
-
-
 RUN mkdir -p /tmp/bin
+
 WORKDIR /tmp/bin
 
 RUN set -ex \
