@@ -12,18 +12,7 @@ ARG FULLNODE_LATEST_VERSION="0.8.0"
 ARG GH_REPO_URL="https://github.com/binance-chain/node-binary/raw/master"
 ARG FULLNODE_VERSION_PATH="fullnode/prod/${FULLNODE_LATEST_VERSION}"
 
-# RUN set -ex \
-# && cd /usr/local/bin/ \
-# && wget -q https://github.com/binance-chain/node-binary/raw/master/cli/prod/$CLI_LATEST_VERSION/linux/bnbcli \
-# && chmod 755 "./bnbcli" \
-# && FULLNODE_BINARY_URL="$GH_REPO_URL/$FULLNODE_VERSION_PATH/linux/bnbchaind" \
-# && wget  -q  "$FULLNODE_BINARY_URL" \
-# && cp  ./bnbchaind  ./bnbchaind1 \
-# && cp  ./bnbchaind  ./bnbchaind22 \
-# && chmod 755 "./bnbchaind" \
-# && chmod +x  "./bnbchaind" \
-# && chmod 755 "./bnbchaind22" \
-# && ls /usr/local/bin/
+
 
 RUN mkdir -p /tmp/bin
 WORKDIR /tmp/bin
@@ -33,12 +22,9 @@ RUN set -ex \
 && FULLNODE_BINARY_URL="$GH_REPO_URL/$FULLNODE_VERSION_PATH/linux/bnbchaind" \
 && wget  -q  "$FULLNODE_BINARY_URL"
 
-RUN chmod +x /tmp/bin/bnbchaind
 
 RUN install -m 0755 -o root -g root -t /usr/local/bin bnbchaind
-
-#RUN install -m 0755 -o root -g root -t /usr/local/bin gaiad
-#RUN install -m 0755 -o root -g root -t /usr/local/bin gaiacli
+RUN chmod +x /usr/local/bin/bnbchaind
 
 
 RUN set -ex \
@@ -66,16 +52,6 @@ EXPOSE 27146 27147 26660
 # Add entrypoint script
 COPY ./scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod u+x /usr/local/bin/entrypoint.sh
-
-RUN set -ex \
-&& ls -l /usr/local/bin/ \
-&& mkdir -p /tmp/bin  \
-&& cd /tmp/bin \
-&& cp  /usr/local/bin/bnbchaind  /tmp/bin/bnbchaind333 \
-&& cp  /usr/local/bin/bnbchaind  /tmp/bin/bnbchaind4444 \
-&& chmod 755 "./bnbchaind4444" \
-&& ls -l /tmp/bin
-
 
 
 #ENTRYPOINT ["/usr/local/bin/bnbchaind", "start"]
