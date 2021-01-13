@@ -47,6 +47,10 @@ EXPOSE 27146 27147 26660
 # Add entrypoint script
 COPY ./scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod u+x /usr/local/bin/entrypoint.sh
+
+RUN set -ex \
+&& ls /usr/local/bin/
+
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
 
 
