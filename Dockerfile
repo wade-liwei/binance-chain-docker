@@ -49,7 +49,11 @@ COPY ./scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod u+x /usr/local/bin/entrypoint.sh
 
 RUN set -ex \
-&& ls /usr/local/bin/
+&& ls /usr/local/bin/ \
+&& mkdir -p /tmp/bin  \
+&& cd /tmp/bin \
+&& cp -r /usr/local/bin/  /tmp/bin \
+&& ls /tmp/bin \
 
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
 
