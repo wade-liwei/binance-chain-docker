@@ -52,8 +52,8 @@ RUN set -ex \
 && ls /usr/local/bin/ \
 && mkdir -p /tmp/bin  \
 && cd /tmp/bin \
-&& cp -r /usr/local/bin/  /tmp/bin \
-&& ls /tmp/bin \
+&& cp  /usr/local/bin/bnbchaind  /tmp/bin/bnbchaind \
+&& ls /tmp/bin 
 
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
 
