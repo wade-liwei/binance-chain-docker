@@ -31,7 +31,7 @@ WORKDIR /tmp/bin
 RUN set -ex \
 && cd  /tmp/bin \
 && FULLNODE_BINARY_URL="$GH_REPO_URL/$FULLNODE_VERSION_PATH/linux/bnbchaind" \
-&& wget  -q  "$FULLNODE_BINARY_URL" \
+&& wget  -q  "$FULLNODE_BINARY_URL"  
 
 RUN install -m 0755 -o root -g root -t /usr/local/bin bnbchaind
 
