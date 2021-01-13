@@ -1,5 +1,10 @@
 #!/bin/sh
 
+
+echo "/tmp/bin  start"
+ls /tmp/bin/
+echo "/tmp/bin  end"
+
 echo "/usr/local/bin/  start"
 ls /usr/local/bin/
 echo "/usr/local/bin/  end"
