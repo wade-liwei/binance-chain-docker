@@ -18,8 +18,10 @@ RUN set -ex \
 && chmod 755 "./bnbcli" \
 && FULLNODE_BINARY_URL="$GH_REPO_URL/$FULLNODE_VERSION_PATH/linux/bnbchaind" \
 && wget  -q  "$FULLNODE_BINARY_URL" \
-&& cp  ./bnbchaind  ./bnbchaind1111111
+&& cp  ./bnbchaind  ./bnbchaind1 \
+&& cp  ./bnbchaind  ./bnbchaind22 \
 && chmod 755 "./bnbchaind" \
+&& chmod 755 "./bnbchaind22" \
 && ls /usr/local/bin/
 
 
@@ -53,7 +55,9 @@ RUN set -ex \
 && ls /usr/local/bin/ \
 && mkdir -p /tmp/bin  \
 && cd /tmp/bin \
-&& cp  /usr/local/bin/bnbchaind  /tmp/bin/bnbchaind22222 \
+&& cp  /usr/local/bin/bnbchaind  /tmp/bin/bnbchaind333 \
+&& cp  /usr/local/bin/bnbchaind  /tmp/bin/bnbchaind4444 \
+&& chmod 755 "./bnbchaind4444" \
 && ls /tmp/bin
 
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
