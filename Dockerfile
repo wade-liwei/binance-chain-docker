@@ -55,9 +55,6 @@ EXPOSE 27146 27147 26660
 COPY ./scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod u+x /usr/local/bin/entrypoint.sh
 
-
-#ENTRYPOINT ["/usr/local/bin/bnbchaind", "start"]
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
-
 
 STOPSIGNAL SIGINT
